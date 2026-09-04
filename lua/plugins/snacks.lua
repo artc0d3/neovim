@@ -31,6 +31,8 @@ return {
 
     -- Search
     { "<leader>sg", function() Snacks.picker.grep() end, desc = "Grep" },
+    { "<leader>sj", function() Snacks.picker.jumps() end, desc = "Jumps" },
+    { "<leader>sm", function() Snacks.picker.marks() end, desc = "Marks" },
 
     -- Scratchpad
     { "<leader>.",  function() Snacks.scratch() end, desc = "Toggle Scratch Buffer" },
