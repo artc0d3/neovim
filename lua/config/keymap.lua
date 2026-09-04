@@ -24,4 +24,16 @@ vim.diagnostic.config {
   },
 }
 
-vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostic [Q]uickfix list' })
+-- Buffer management
+vim.keymap.set('n', '<leader>bd', function() Snacks.bufdelete() end,          { desc = 'Delete buffer' })
+vim.keymap.set('n', '<leader>bD', function() Snacks.bufdelete({ wipe = true }) end, { desc = 'Delete buffer and window' })
+vim.keymap.set('n', '<leader>bb', '<cmd>e #<cr>',                             { desc = 'Switch to last buffer' })
+vim.keymap.set('n', '<leader>bo', function() Snacks.bufdelete.other() end,    { desc = 'Delete other buffers' })
+vim.keymap.set('n', '<leader>bp', '<cmd>BufferLineTogglePin<cr>',             { desc = 'Toggle pin buffer' })
+vim.keymap.set('n', '<leader>bP', '<cmd>BufferLineGroupClose ungrouped<cr>',  { desc = 'Delete non-pinned buffers' })
+
+-- Window management
+vim.keymap.set('n', '<leader>wd', '<cmd>close<cr>',      { desc = 'Close window' })
+vim.keymap.set('n', '<leader>ww', '<C-w>w',              { desc = 'Switch window' })
+vim.keymap.set('n', '<leader>w-', '<cmd>split<cr>',      { desc = 'Split window below' })
+vim.keymap.set('n', '<leader>w|', '<cmd>vsplit<cr>',     { desc = 'Split window right' })
