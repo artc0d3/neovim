@@ -4,7 +4,14 @@ return {
     cmd = "Mason",
     keys = { { "<leader>cm", "<cmd>Mason<cr>", desc = "Mason" } },
     build = ":MasonUpdate",
-    opts = {},
+    opts = {
+      -- Listed first so it takes precedence over the official registry.
+      -- See lua/mason-registry-custom/init.lua
+      registries = {
+        "lua:mason-registry-custom",
+        "github:mason-org/mason-registry",
+      },
+    },
   },
   {
     "neovim/nvim-lspconfig",
@@ -71,7 +78,7 @@ return {
     "mason-org/mason-lspconfig.nvim",
     dependencies = { "mason-org/mason.nvim" },
     opts = {
-      ensure_installed = { "kotlin_lsp", "lua_ls" },
+      ensure_installed = { "lua_ls" },
       automatic_enable = true,
     },
   },
