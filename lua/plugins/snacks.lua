@@ -30,7 +30,14 @@ return {
     { "<leader>gp", function() Snacks.picker.gh_pr() end, desc = "GitHub Pull Requests (open)" },
 
     -- Search
-    { "<leader>sg", function() Snacks.picker.grep() end, desc = "Grep" },
+    { "<leader>sg", function() Snacks.picker.grep({ hidden = true }) end, desc = "Grep" },
+    { "<leader>sG", function()
+      vim.ui.input(
+        { prompt = "Glob: ", default = "*." },
+        function(g)
+          if g then Snacks.picker.grep({ glob = g, hidden = true }) end
+        end)
+      end, desc = "Grep (glob)" },
     { "<leader>sj", function() Snacks.picker.jumps() end, desc = "Jumps" },
     { "<leader>sm", function() Snacks.picker.marks() end, desc = "Marks" },
 
