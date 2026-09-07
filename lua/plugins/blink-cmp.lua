@@ -8,6 +8,7 @@ return {
     keymap = {
       preset = "default",
       ["<C-space>"] = { "show", "show_documentation", "hide_documentation" },
+      ["<Tab>"] = { "select_and_accept", "fallback"  },
     },
     sources = {
       default = { "lazydev", "lsp", "path", "buffer" },
