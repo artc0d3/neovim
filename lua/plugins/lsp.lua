@@ -104,7 +104,10 @@ return {
 		"mason-org/mason-lspconfig.nvim",
 		dependencies = { "mason-org/mason.nvim" },
 		opts = {
-			ensure_installed = { "kotlin_lsp", "lua_ls" },
+			ensure_installed = {
+				"kotlin_lsp", "lua_ls", "vtsls",
+				"marksman", "jsonls", "yamlls", "taplo", "bashls", "html", "cssls",
+			},
 			automatic_enable = true,
 		},
 	},
