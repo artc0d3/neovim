@@ -37,3 +37,7 @@ vim.keymap.set('n', '<leader>wd', '<cmd>close<cr>',      { desc = 'Close window'
 vim.keymap.set('n', '<leader>ww', '<C-w>w',              { desc = 'Switch window' })
 vim.keymap.set('n', '<leader>w-', '<cmd>split<cr>',      { desc = 'Split window below' })
 vim.keymap.set('n', '<leader>w|', '<cmd>vsplit<cr>',     { desc = 'Split window right' })
+
+-- Jump list navigation
+vim.keymap.set('n', '<C-o>', '<C-o>', { desc = 'Jump Backward' })
+vim.keymap.set('n', '<C-i>', '<C-i>', { desc = 'Jump Forward' })
